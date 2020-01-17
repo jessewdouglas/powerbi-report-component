@@ -70,6 +70,7 @@ class MyComponent extends Component {
             pageName="" // set as current page of the report
             extraSettings={extraSettings}
             permissions="All" // View
+            datasetId="" // dataset ID when using dynamic binding (optional)
             style={reportStyle}
             onLoad={this.handleReportLoad}
             onRender={this.handleReportRender}
