@@ -18,6 +18,7 @@ const createConfig = props => {
       pageName,
       extraSettings,
       dashboardId,
+      datasetId,
     } = props;
 
     return clean({
@@ -29,6 +30,9 @@ const createConfig = props => {
       pageName: pageName,
       dashboardId: dashboardId,
       permissions: models.Permissions[permissions],
+      datasetBinding: datasetId ? {
+        datasetId: datasetId,
+      } : null,
       settings: {
         filterPaneEnabled: true,
         navContentPaneEnabled: true,
@@ -143,6 +147,7 @@ Report.propTypes = {
   pageName: PropTypes.string,
   extraSettings: PropTypes.object,
   permissions: PropTypes.string.isRequired,
+  datasetId: PropTypes.string,
   onLoad: PropTypes.func,
   onSelectData: PropTypes.func,
   onPageChange: PropTypes.func,
